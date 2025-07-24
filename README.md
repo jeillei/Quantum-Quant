@@ -79,16 +79,16 @@ Install dependencies with:
 pip install numpy pandas matplotlib scipy yfinance filterpy
 ```
 
-##▶️ How to Run
-###🧪 Classical Simulation
+## ▶️ How to Run
+### 🧪 Classical Simulation
 ```bash
 python random_walk_price.py
 ```
-###🧠 Quantum TDSE Simulation
+### 🧠 Quantum TDSE Simulation
 ```bash
 python quantum_walk.py
 ```
-##🧰 Custom Market Potential
+## 🧰 Custom Market Potential
 ```bash
 def V_market_adaptive(x, t, center, x_expect, p_expect, sigma, volatility):
     revert_strength = 0.001
@@ -97,10 +97,9 @@ def V_market_adaptive(x, t, center, x_expect, p_expect, sigma, volatility):
     return V
 ```
 Captures:
+- 📉 Mean reversion to a moving center
 
-    📉 Mean reversion to a moving center
+- ➕ Momentum direction based on price drift
 
-    ➕ Momentum direction based on price drift
-
-    🌪 Volatility-sensitive “push” dynamics
+- 🌪 Volatility-sensitive “push” dynamics
 
