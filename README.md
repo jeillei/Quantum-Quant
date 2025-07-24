@@ -18,8 +18,17 @@ We model price evolution using:
 These are tested against historical stock data from **Apple Inc. (AAPL)**.
 
 ---
+## 📁 Project Structure
 
-<pre> 📁 Project Structure ├── Datasets/ ├── TDSE_Solver.py # Schrödinger equation (TDSE) simulation engine ├── quantum_walk.py # Quantum simulation with adaptive market potential ├── random_walk_price.py # Benchmark: AR(1) vs GBM simulation ├── preview_chart.png # Visualization output └── README.md # Project overview (this file) </pre>
+```text
+.
+├── Datasets/                     # Folder for historical stock data
+├── TDSE_Solver.py               # Schrödinger equation (TDSE) simulation engine
+├── quantum_walk.py              # Quantum simulation with adaptive market potential
+├── random_walk_price.py         # Benchmark: AR(1) vs GBM simulation
+├── preview_chart.png            # Visualization output
+└── README.md                    # Project overview (this file)
+```
 
 ---
 
