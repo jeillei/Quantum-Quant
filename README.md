@@ -21,8 +21,6 @@ These are tested against historical stock data from **Apple Inc. (AAPL)**.
 ## 📁 Project Structure
 
 ```text
-.
-├── Datasets/                     # Folder for historical stock data
 ├── TDSE_Solver.py               # Schrödinger equation (TDSE) simulation engine
 ├── quantum_walk.py              # Quantum simulation with adaptive market potential
 ├── random_walk_price.py         # Benchmark: AR(1) vs GBM simulation
