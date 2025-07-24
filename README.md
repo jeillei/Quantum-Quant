@@ -19,12 +19,7 @@ These are tested against historical stock data from **Apple Inc. (AAPL)**.
 
 ---
 
-## 📁 Project Structure
-├── Datasets
-├── TDSE_Solver.py # Schrödinger equation (TDSE) simulation engine
-├── quantum_walk.py # Quantum simulation with adaptive market potential
-├── random_walk_price.py # Benchmark: AR(1) vs GBM simulation
-└── README.md # Project overview (this file)
+<pre> 📁 Project Structure ├── Datasets/ ├── TDSE_Solver.py # Schrödinger equation (TDSE) simulation engine ├── quantum_walk.py # Quantum simulation with adaptive market potential ├── random_walk_price.py # Benchmark: AR(1) vs GBM simulation ├── preview_chart.png # Visualization output └── README.md # Project overview (this file) </pre>
 
 ---
 
@@ -62,7 +57,7 @@ These are tested against historical stock data from **Apple Inc. (AAPL)**.
 ## 📊 Sample Output
 
 <p align="center">
-  <img src="preview_chart.png" alt="Quantum vs GBM vs Actual Prices" width="600"/>
+  <img src="Q_vs_G.png" alt="Quantum vs GBM vs Actual Prices" width="600"/>
 </p>
 
 - 🔵 **Mean Quantum Path**
