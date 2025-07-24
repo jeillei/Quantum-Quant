@@ -20,52 +20,54 @@ These are tested against historical stock data from **Apple Inc. (AAPL)**.
 ---
 
 ## 📁 Project Structure
-├── HistoricalQuotes.csv # Historical data (e.g., AAPL)
-├── benchmark_ar1_vs_gbm.py # Classical benchmark: AR(1) vs GBM
-├── TDSE_Solver.py # Core TDSE engine (Fourier-based)
-├── quantum_stock_simulation.py # Quantum market dynamics + visualization
-└── README.md # This file
-
+├── Datasets
+├── TDSE_Solver.py # Schrödinger equation (TDSE) simulation engine
+├── quantum_walk.py # Quantum simulation with adaptive market potential
+├── random_walk_price.py # Benchmark: AR(1) vs GBM simulation
+└── README.md # Project overview (this file)
 
 ---
 
-## 📈 Simulation Approaches
+## 📈 Modeling Approaches
 
 <details>
-<summary><strong>1. Benchmark (AR(1) vs GBM)</strong></summary>
+<summary><strong>1. Benchmark Model (random_walk_price.py)</strong></summary>
 
-- Normalizes high/low prices to simulate stock movement
-- Extracts drift and volatility from historical log returns
-- Simulates:
+- Loads real historical data and normalizes prices
+- Simulates stock price evolution using:
   - 🔁 **AR(1)** process (autocorrelated returns)
-  - 💹 **GBM** (stochastic differential equation)
-
+  - 📉 **GBM** using inferred μ and σ
+- Overlays simulated paths with actual price highs and lows
 </details>
 
 <details>
-<summary><strong>2. TDSE Quantum Market Model</strong></summary>
+<summary><strong>2. Quantum Price Model (quantum_walk.py + TDSE_Solver.py)</strong></summary>
 
 - Initializes wavefunction with:
-  - `x₀`: starting price  
-  - `p₀`: estimated trend  
-  - `σ`: rolling volatility → uncertainty
+  - `x₀` = starting price  
+  - `p₀` = trend estimate from linear regression  
+  - `σ` = rolling volatility → quantum uncertainty
 
-- Evolves wavefunction using the **Split-Operator Fourier Method**
-- Dynamically updates potential based on:
-  - Recent price trends (momentum)
-  - Mean-reversion
-  - Market volatility
-- Samples ensemble paths from the probability distribution
-
+- Evolves using **Split-Operator Fourier Method**
+- Market potential adapts to:
+  - Recent price momentum
+  - Mean-reversion behavior
+  - Volatility-driven exploratory pushes
+- Samples probabilistic paths from evolving wavefunction
+- Applies **Kalman filter** for optional smoothing
 </details>
 
 ---
 
-## 🔬 Sample Result
+## 📊 Sample Output
 
 <p align="center">
   <img src="preview_chart.png" alt="Quantum vs GBM vs Actual Prices" width="600"/>
 </p>
+
+- 🔵 **Mean Quantum Path**
+- 🔷 **±σ Confidence Band**
+- ⚪️ **Actual High/Low Prices**
 
 ---
 
@@ -75,3 +77,30 @@ Install dependencies with:
 
 ```bash
 pip install numpy pandas matplotlib scipy yfinance filterpy
+```
+
+##▶️ How to Run
+###🧪 Classical Simulation
+```bash
+python random_walk_price.py
+```
+###🧠 Quantum TDSE Simulation
+```bash
+python quantum_walk.py
+```
+##🧰 Custom Market Potential
+```bash
+def V_market_adaptive(x, t, center, x_expect, p_expect, sigma, volatility):
+    revert_strength = 0.001
+    trend_strength = 0.07
+    push = ...
+    return V
+```
+Captures:
+
+    📉 Mean reversion to a moving center
+
+    ➕ Momentum direction based on price drift
+
+    🌪 Volatility-sensitive “push” dynamics
+
